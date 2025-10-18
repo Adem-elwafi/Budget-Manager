@@ -13,6 +13,8 @@ const emit = defineEmits(['delete'])
     >
       <div>
         <p class="font-medium">{{ t.label }}</p>
+        <p class="text-sm text-gray-500"
+>{{ t.category }}</p>
         <p :class="t.type === 'income' ? 'text-green-600' : 'text-red-600'">
           {{ t.type === 'income' ? '+' : '-' }}{{ t.amount }} TND
         </p>
