@@ -26,7 +26,7 @@ function submit() {
 </script>
 
 <template>
-  <form @submit.prevent="submit" class="bg-white p-4 rounded shadow space-y-4">
+  <form @submit.prevent="submit" class="bg-white  p-4 rounded shadow space-y-4">
     <select v-model="newTransaction.type" class="w-full p-2 border rounded">
       <option value="income">Income</option>
       <option value="expense">Expense</option>
@@ -38,9 +38,16 @@ function submit() {
 
     <input v-model="newTransaction.label" type="text" placeholder="Label" class="w-full p-2 border rounded" />
     <input v-model="newTransaction.amount" type="number" placeholder="Amount" class="w-full p-2 border rounded" />
+    
+    <div class="buttons-container flex justify-between w-full">
 
     <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">
       Add Transaction
     </button>
+<p @click="$emit('view')" class="text-sm text-blue-700 underline pt-3 cursor-pointer">
+  View all transactions
+</p>
+    </div>
+
   </form>
 </template>

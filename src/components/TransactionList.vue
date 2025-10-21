@@ -37,5 +37,9 @@ const filteredTransactions = computed(() => {
         Delete
       </button>
     </li>
+    <p class="text-sm text-gray-500 italic">
+  Showing latest 3 transactions. <span class="text-blue-700 underline cursor-pointer" @click="openModal">View all</span>
+    </p>
+
   </ul>
 </template>
