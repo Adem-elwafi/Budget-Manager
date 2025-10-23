@@ -4,6 +4,7 @@ import TransactionForm from '../components/TransactionForm.vue'
 import TransactionList from '../components/TransactionList.vue'
 import SummaryBox from '../components/SummaryBox.vue'
 import TransactionModal from '../components/TransactionModal.vue'
+import NavBar from '../components/NavBar.vue'
 
 const transactions = ref([])
 const showModal = ref(false)
@@ -41,9 +42,12 @@ const totalExpense = computed(() =>
   transactions.value.filter(t => t.type === 'expense').reduce((sum, t) => sum + t.amount, 0)
 )
 const balance = computed(() => totalIncome.value - totalExpense.value)
+
+
 </script>
 
 <template>
+    <NavBar></NavBar>
   <div class="p-6 max-w-xl mx-auto space-y-6">
     <SummaryBox :income="totalIncome" :expense="totalExpense" :balance="balance" />
     <TransactionForm @add="addTransaction" @view="openModal" />
