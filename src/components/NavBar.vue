@@ -23,7 +23,7 @@ const open = ref(false)
 const today = computed(() => new Date().toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' }))
 </script>
 <template>
-    <nav class="bg-white shadow-md">
+    <nav class="bg-white shadow-md dark:bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex">
@@ -35,9 +35,9 @@ const today = computed(() => new Date().toLocaleDateString(undefined, { weekday:
                         </div>
                     </div>
                     <div class="hidden sm:ml-6 sm:flex sm:space-x-4 sm:items-center ml-6">
-                        <router-link to="/" class="text-gray-700 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</router-link>
-                        <router-link to="/reports" class="text-gray-700 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reports</router-link>
-                        <router-link to="/settings" class="text-gray-700 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Settings</router-link>
+                        <router-link to="/" class="text-gray-700 dark:text-gray-200 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</router-link>
+                        <router-link to="/reports" class="text-gray-700 dark:text-gray-200 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reports</router-link>
+                        <router-link to="/settings" class="text-gray-700 dark:text-gray-200 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Settings</router-link>
                     </div>
                 </div>
 
@@ -62,9 +62,9 @@ const today = computed(() => new Date().toLocaleDateString(undefined, { weekday:
 
                 <div v-if="open" class="sm:hidden">
             <div class="pt-2 pb-3 space-y-1">
-                <router-link to="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-700 hover:text-white">Dashboard</router-link>
-                <router-link to="/reports" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-700 hover:text-white">Reports</router-link>
-                <router-link to="/settings" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-700 hover:text-white">Settings</router-link>
+                <router-link to="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-blue-700 hover:text-white">Dashboard</router-link>
+                <router-link to="/reports" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-blue-700 hover:text-white">Reports</router-link>
+                <router-link to="/settings" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-blue-700 hover:text-white">Settings</router-link>
                 <div class="px-3 py-2">
                     <select :value="type" @change="onFilterChange" class="w-full p-2 border rounded">
                         <option value="all">All</option>
