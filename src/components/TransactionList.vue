@@ -23,11 +23,11 @@ const filteredTransactions = computed(() => {
     <li
       v-for="t in filteredTransactions"
       :key="t.id"
-      class="flex justify-between items-center p-3 rounded shadow bg-white"
+      class="flex justify-between items-center p-3 rounded shadow bg-white dark:bg-gray-800"
       :class="t.type === 'income' ? 'border-l-4 border-green-500' : 'border-l-4 border-red-500'"
     >
       <div>
-        <p class="text-sm text-gray-500">{{ t.category }}</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">{{ t.category }}</p>
         <p class="font-medium">{{ t.label }}</p>
         <p :class="t.type === 'income' ? 'text-green-600' : 'text-red-600'">
           {{ t.type === 'income' ? '+' : '-' }}{{ t.amount }} TND

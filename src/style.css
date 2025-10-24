@@ -3,3 +3,12 @@
 @tailwind utilities;
 
 /* Your custom styles below */
+
+/* Global background/text for light/dark modes */
+html, body, #app {
+	@apply bg-gray-50 text-gray-900;
+}
+
+.dark html, .dark body, .dark #app {
+	@apply bg-gray-900 text-gray-100;
+}

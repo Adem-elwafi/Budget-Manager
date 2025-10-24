@@ -8,14 +8,14 @@ const emit = defineEmits(['close'])
 
 <template>
   <div v-if="show" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
-    <div class="bg-white p-6 rounded shadow-lg w-full max-w-md space-y-4">
-      <h2 class="text-xl font-bold">All Transactions</h2>
+    <div class="bg-white p-6 rounded shadow-lg w-full max-w-md space-y-4 dark:bg-gray-800 dark:text-gray-100">
+      <h2 class="text-xl font-bold dark:text-gray-100">All Transactions</h2>
 
       <ul class="space-y-2 max-h-64 overflow-y-auto">
         <li
           v-for="t in transactions"
           :key="t.id"
-          class="flex justify-between items-center p-3 rounded shadow bg-gray-50"
+          class="flex justify-between items-center p-3 rounded shadow bg-gray-50 dark:bg-gray-900"
           :class="t.type === 'income' ? 'border-l-4 border-green-500' : 'border-l-4 border-red-500'"
         >
           <div>
@@ -28,7 +28,7 @@ const emit = defineEmits(['close'])
         </li>
       </ul>
 
-      <button @click="emit('close')" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded">
+      <button @click="emit('close')" class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded dark:bg-indigo-500 dark:hover:bg-indigo-600">
         Close
       </button>
     </div>
